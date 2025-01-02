@@ -1,0 +1,33 @@
+[
+  {
+    "id": 1,
+    "priority": 1,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "url": "https://mail.google.com/mail/"
+      }
+    },
+    "condition": {
+      "urlFilter": "https://mail.google.com/mail/ca/*",
+      "resourceTypes": ["main_frame"]
+    }
+  },
+  {
+    "id": 2,
+    "priority": 1,
+    "action": {
+      "type": "modifyHeaders",
+      "requestHeaders": [
+        {
+          "header": "Cookie",
+          "operation": "remove"
+        }
+      ]
+    },
+    "condition": {
+      "urlFilter": "*",
+      "resourceTypes": ["main_frame", "xmlhttprequest"]
+    }
+  }
+]
